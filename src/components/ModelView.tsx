@@ -1,6 +1,5 @@
 import { View, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import React, { Suspense } from "react";
-import { AmbientLight } from "three";
 import Lights from "./Lights";
 import Iphone from "./Iphone";
 import * as THREE from "three";
@@ -13,7 +12,6 @@ const ModelView = ({
   controlRef,
   setRotationState,
   item,
-  size,
 }: any) => {
   return (
     <View

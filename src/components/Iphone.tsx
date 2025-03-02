@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import { useGLTF, useTexture } from "@react-three/drei";
+import React, { useEffect } from "react";
+import { useGLTF } from "@react-three/drei";
 import { Mesh } from "three";
 import * as THREE from "three";
 interface GLTFResult {
@@ -31,7 +31,7 @@ export default function Model(props: any) {
     });
 
     return () => {};
-  }, [props.item]);
+  }, [props.item, materials]);
 
   return (
     <group {...props} dispose={null}>

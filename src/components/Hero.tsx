@@ -9,10 +9,13 @@ const Hero = () => {
   const [videoSrc, SetVideoSrc] = useState(heroVideo);
 
   const handleSVideoSrcSet = () => {
-    if (window.innerWidth < 768) {
-      SetVideoSrc(smallHeroVideo);
-    } else {
-      SetVideoSrc(heroVideo);
+    if (typeof document !== "undefined") {
+      if (window.innerWidth < 768) {
+        SetVideoSrc(smallHeroVideo);
+
+      } else {
+        SetVideoSrc(heroVideo);
+      }
     }
   };
   useEffect(() => {
@@ -47,13 +50,14 @@ const Hero = () => {
           className="text-center font-semibold text-3xl text-gray-100  max-sm:mb-12 mb-5 opacity-0"
         >
           {" "}
-          Iphone 15 Pro
+          Iphone 16 Pro
         </p>
         <video
           key={videoSrc}
           className="w-9/12 max-sm:w-2/3 max-md:w-1/2  "
           autoPlay
           muted
+          playsInline
         >
           <source src={`${videoSrc}`} type="video/mp4" />
         </video>
