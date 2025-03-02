@@ -11,7 +11,7 @@ const Feature = () => {
   useGSAP(() => {
     animateWithGsap(
       "#features_title",
-      { opacity: 1, y: 0 },
+      { opacity: 1, y: 0 , duration : 1 },
       { toggleActions: "play none none none" }
     );
 
@@ -26,6 +26,9 @@ const Feature = () => {
       opacity: 1,
       ease: "power1",
       duration: 0.5,
+    },{
+      start : 'top 50%',
+      end : 'bottom 10%' ,
     }, );
   });
 

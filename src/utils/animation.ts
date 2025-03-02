@@ -33,7 +33,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/all"
 gsap.registerPlugin(ScrollTrigger);
 
-export const animateWithGsap = (target :any, animationProps? :any, scrollProps? : any) => {
+export const animateWithGsap = (target :any, animationProps? :GSAPTweenVars, scrollProps? : ScrollTrigger.Vars) => {
   gsap.to(target, {
     ...animationProps,
     scrollTrigger: {

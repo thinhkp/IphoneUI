@@ -85,7 +85,6 @@ const Model = () => {
             item={model}
           />
           <Canvas
-            className="w-full h-full"
             style={{
               position: "fixed",
               top: 0,
@@ -93,7 +92,6 @@ const Model = () => {
               left: 0,
               right: 0,
               overflow: "hidden",
-              zIndex : -1 
             }}
             eventSource={containerRef.current || undefined}
           >
