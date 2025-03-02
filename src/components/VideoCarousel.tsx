@@ -12,7 +12,7 @@ const VideoCarousel = () => {
   const VideoRefSpan = useRef<any[]>([]);
   const VideoRefDiv = useRef<any[]>([]);
 
-  let AniRef = useRef<GSAPTween>(null);
+  const AniRef = useRef<GSAPTween>(null);
 
   const [Video, setVideo] = useState({
     videoId: 0,
@@ -25,7 +25,7 @@ const VideoCarousel = () => {
   const handleLoadedMetaData = (i: any, e: any) => {
     setLoadedData((pre) => [...pre, e]);
   };
-  const HandleVideoProgress = (type: string, index: number) => {
+  const HandleVideoProgress = (type: string) => {
     switch (type) {
       case "video-end":
         if (videoId < 3) {
@@ -42,11 +42,9 @@ const VideoCarousel = () => {
         }
         break;
       case "pause":
-        console.log("pause");
         setVideo((pre) => ({ ...pre, isPlaying: false }));
         break;
       case "play":
-        console.log("continue");
 
         setVideo((pre) => ({ ...pre, isPlaying: true }));
         break;
@@ -95,8 +93,8 @@ const VideoCarousel = () => {
 
   //effect progess bar
   useGSAP(() => {
-    let div = VideoRefDiv.current;
-    let span = VideoRefSpan.current;
+    const div = VideoRefDiv.current;
+    const span = VideoRefSpan.current;
     let currentProgress: number = 0;
     if (isPlaying) {
       if(AniRef.current?.paused() && AniRef.current != null ){
@@ -133,7 +131,7 @@ const VideoCarousel = () => {
             });
             AniRef.current?.kill()
             AniRef.current = null;
-            HandleVideoProgress("video-end", videoId);
+            HandleVideoProgress("video-end");
           },
           duration: VideoRef.current[videoId].duration,
         });  
@@ -169,7 +167,7 @@ const VideoCarousel = () => {
                 </div>
                 <div className="absolute top-12 left-[5%]">
                   {item.textLists.map((text) => (
-                    <p key={text} className="md:text-xl md:mb-3">
+                    <p key={text} className="md:text-xl md:mb-3 font-bold text-gray">
                       {text}
                     </p>
                   ))}
@@ -204,10 +202,10 @@ const VideoCarousel = () => {
           className="flex-center py-5 px-5 bg-gray-300 rounded-full cursor-pointer"
           onClick={() => {
             isPlaying
-              ? HandleVideoProgress("pause", videoId)
+              ? HandleVideoProgress("pause",)
               : isLastVideo
-              ? HandleVideoProgress("restart", videoId)
-              : HandleVideoProgress("play", videoId);
+              ? HandleVideoProgress("restart",)
+              : HandleVideoProgress("play",);
           }}
         >
           <Image

@@ -5,6 +5,11 @@ import Model from "~/components/Model";
 import Feature from "~/components/Feature";
 import HowItWorks from "~/components/HowItWork";
 import Footer from "~/components/Footer";
+
+export const metadata = {
+  title: 'Iphone 16 Pro',
+}
+
 export default function Home() {
   return (
     <main>

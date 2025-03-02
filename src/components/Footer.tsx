@@ -1,5 +1,4 @@
 import React from "react";
-import { footerLinks } from "~/constant";
 import { Facebook, Github } from 'lucide-react'
 
 const Footer = () => {

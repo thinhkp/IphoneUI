@@ -4,7 +4,7 @@ export const animateWithGsapTimeline = (
   rotarion: any,
   firstTarget: string,
   secondTarget: string,
-  animationProps: {}
+  animationProps: GSAPTweenVars
 ) => {
   timeline.to(modelref.current.rotation, {
     y: rotarion,

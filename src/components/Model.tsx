@@ -8,11 +8,13 @@ import * as THREE from "three";
 import ModelView from "./ModelView";
 import { models, sizes } from "../constant";
 import { animateWithGsapTimeline } from "~/utils/animation";
-import { transform } from "next/dist/build/swc/generated-native";
 
 const Model = () => {
   const [size, setSize] = useState("small");
   const [model, setModel] = useState(models[0]);
+
+  // container ref 
+  let containerRef = useRef<HTMLDivElement>(null)
 
   // camera control for the model view
   const cameraControlSmall = useRef(null);
@@ -63,6 +65,7 @@ const Model = () => {
         <div
           id="model-container"
           className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative"
+          ref={containerRef}
         >
           <ModelView
             index={1}
@@ -91,7 +94,7 @@ const Model = () => {
               right: 0,
               overflow: "hidden",
             }}
-            eventSource={document.getElementsByTagName("body")[0]}
+            eventSource={containerRef.current || undefined}
           >
             <View.Port />
           </Canvas>
