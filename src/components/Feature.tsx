@@ -27,13 +27,13 @@ const Feature = () => {
       ease: "power1",
       duration: 0.5,
     },{
-      start : 'top 50%',
+      start : 'top 85%',
       end : 'bottom 10%' ,
     }, );
   });
 
   return (
-    <section className="h-full common-padding bg-zinc relative overflow-hidden">
+    <section  id="feature"className="h-full common-padding bg-zinc relative overflow-hidden">
       <div className="screen-max-width">
         <div className="mb-12 w-full">
           <h1 id="features_title" className="section-heading">
@@ -77,10 +77,10 @@ const Feature = () => {
                 />
               </div>
             </div>
-            <div className="flex flex-col md:flex-row mt-10 justify-between  w-full">
+            <div className="flex flex-col md:flex-row mt-10 justify-between gap-8 w-full">
               <p className="feature-text g_text">
                 iPhone 15 Pro is{" "}
-                <span className="text-white">
+                <span className="text-white ">
                   the first iPhone to feature an aerospace-grade titanium design
                 </span>
                 , using the same alloy that spacecrafts use for missions to

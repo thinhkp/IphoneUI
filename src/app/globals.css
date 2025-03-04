@@ -8,18 +8,22 @@
   box-sizing: border-box;
 }
 
-
-html,body {
+html{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
   color: white;
   width: 100vw;
   overflow-x: hidden;
   background: #000;
   border-color: #3b3b3b;
+  
 }
 
 canvas {
+  transform: translate3d(0, 0, 0);
   z-index: -1;
-  overflow: hidden;
 }
 
 .screen-max-width {
@@ -29,7 +33,18 @@ canvas {
   max-width: 1120px;
 }
 
+@layer base{
+  a,img,span{
+    @apply align-top
+  }
+}
+
 @layer utilities {
+
+  .translate-reset{
+    @apply translate-x-0 translate-y-0
+  }
+
   .flex-center {
     @apply flex items-center justify-center;
   }

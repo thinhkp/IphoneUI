@@ -59,9 +59,10 @@ const VideoCarousel = () => {
         break;
     }
   };
-
   // khi scroll xuống video ele thì bắt đầu chạy
   useGSAP(() => {
+    
+    
     gsap.to("#video", {
       scrollTrigger: {
         trigger: "#video",
@@ -84,15 +85,16 @@ const VideoCarousel = () => {
 
   // effect play video
   useEffect(() => {
-    if (LoadedData.length > 0) {
+    if (LoadedData.length > 3) {
       isPlaying
         ? VideoRef.current[videoId].play()
         : VideoRef.current[videoId].pause();
+      
     } 
   }, [LoadedData, videoId, isPlaying]);
 
   //effect progess bar
-  useGSAP(() => {
+  useEffect(() => {
     const div = VideoRefDiv.current;
     const span = VideoRefSpan.current;
     let currentProgress: number = 0;
@@ -152,13 +154,17 @@ const VideoCarousel = () => {
                   <video
                     id="video"
                     muted
-                    playsInline={true}
+                    playsInline
                     preload="auto"
                     ref={(el) => {
-                      VideoRef.current[i] = el as HTMLVideoElement;
+                      VideoRef.current[i] = el as HTMLVideoElement
                     }}
                     onLoadedData={(e) => {
                       handleLoadedMetaData(i, e);
+                    }}
+                    autoPlay
+                    onCanPlay={(e)=>{
+                      e.currentTarget.pause()
                     }}
                     
                   >

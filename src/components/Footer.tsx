@@ -12,7 +12,7 @@ const Footer = () => {
               href="https://www.apple.com/vn/store"
               className="underline text-blue"
             >
-              Find Apple Store
+            Find Apple Store
             </a>
             <br />
             Or call : 0327957420
