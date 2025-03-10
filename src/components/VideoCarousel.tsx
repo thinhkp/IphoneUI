@@ -85,11 +85,15 @@ const VideoCarousel = () => {
 
   // effect play video
   useEffect(() => {
+    
     if (LoadedData.length > 3) {
-      isPlaying
-        ? VideoRef.current[videoId].play()
-        : VideoRef.current[videoId].pause();
-      
+      if(isPlaying){
+        VideoRef.current[videoId].play()
+        console.log('play');
+      }else{
+         VideoRef.current[videoId].pause();
+         console.log('pause');
+      }
     } 
   }, [LoadedData, videoId, isPlaying]);
 
@@ -118,9 +122,12 @@ const VideoCarousel = () => {
             currentProgress =
               VideoRef.current[videoId].currentTime /
               VideoRef.current[videoId].duration;
-            gsap.to(span[videoId], {
+            let a = gsap.to(span[videoId], {
               backgroundColor: "white",
               width: `${currentProgress * 100}%`,
+              onComplete : ()=>{
+                a.kill()
+              }
             });
           },
           onComplete: () => {
@@ -161,11 +168,9 @@ const VideoCarousel = () => {
                     }}
                     onLoadedData={(e) => {
                       handleLoadedMetaData(i, e);
-                    }}
-                    autoPlay
-                    onCanPlay={(e)=>{
                       e.currentTarget.pause()
                     }}
+                    autoPlay
                     
                   >
                     <source src={item.video} type="video/mp4"/>

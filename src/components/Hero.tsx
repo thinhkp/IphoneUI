@@ -9,7 +9,7 @@ const Hero = () => {
   const [videoSrc, SetVideoSrc] = useState(heroVideo);
 
   const handleSVideoSrcSet = () => {
-    if (typeof document !== "undefined") {
+    if (typeof window !== "undefined") {
       if (window.innerWidth < 768) {
         SetVideoSrc(smallHeroVideo);
 
@@ -20,9 +20,7 @@ const Hero = () => {
   };
   useEffect(() => {
     handleSVideoSrcSet();
-
     window.addEventListener("resize", handleSVideoSrcSet);
-
     return () => {
       window.removeEventListener("resize", handleSVideoSrcSet);
     };
