@@ -1,5 +1,5 @@
 import React from "react";
-import { Facebook, Github } from 'lucide-react'
+import { Facebook, Github } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,15 +7,16 @@ const Footer = () => {
       <div className="screen-max-width">
         <div className="flex flex-col">
           <p className="text-sm text-gray font-semibold">
-            More ways to shop :{" "}
+            More ways to shop:
             <a
               href="https://www.apple.com/vn/store"
               className="underline text-blue"
             >
-            Find Apple Store
+              Find Apple Store
             </a>
-            <br />
-            Or call : 0327957420
+          </p>
+          <p className="text-sm text-gray font-semibold">
+            {'Or 0327957420'}
           </p>
           <div className="my-5 h-[1px] bg-gray-50"></div>
           <div className="flex items-center justify-start flex-1 gap-5">
@@ -23,14 +24,13 @@ const Footer = () => {
               {" "}
               Developed by : Thịnh
             </p>
-            <div className="flex-center gap-2" >
-                <a href="https://github.com/thinhkp" target="_blank">
-                <Github className="w-6 h-6"/>
-
-                </a>
-                <a href="https://www.facebook.com/mthinh04/" target="_blank">
-                    <Facebook className="w-6 h-6"/>
-                </a>
+            <div className="flex-center gap-2">
+              <a href="https://github.com/thinhkp" target="_blank">
+                <Github className="w-6 h-6" />
+              </a>
+              <a href="https://www.facebook.com/mthinh04/" target="_blank">
+                <Facebook className="w-6 h-6" />
+              </a>
             </div>
           </div>
         </div>

@@ -103,7 +103,7 @@ const Model = () => {
     <section className="common-padding" id="model">
       <div className="screen-max-width">
         <h2 className="section-heading" id="model-heading">
-          Take a closer look
+          Take a closer look <br />with 3D model
         </h2>
         <div
           id="model-container"

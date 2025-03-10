@@ -5,10 +5,16 @@ import { navLists } from '~/constant'
 
 const Navbar = () => {
   return (
-        <header className='px-5 max-md:py-5 py-10 flex justify-center h-auto w-full '>
+        <header className='common-padding  flex justify-center h-auto w-full '>
             <nav className='w-full max-w-[1120] flex justify-between items-center relative ' >
                 <div>
-                   <Image src={appleImg} width={14} height={18} alt=''></Image>
+                   <Image 
+                     src={appleImg} 
+                     width={14} 
+                     height={18} 
+                     alt=''
+                     className="min-[1440px]:w-5 min-[1440px]:h-6"
+                   />
                 </div>
 
                 <ul className=" max-sm:hidden flex flex-1 justify-center">
@@ -19,8 +25,20 @@ const Navbar = () => {
                 </ul>
 
                 <div className='flex  justify-end gap-7'>
-                  <Image src={searchImg} height={18} width={14} alt=''></Image>
-                  <Image src={bagImg} height={18} width={14} alt=''></Image>
+                  <Image 
+                    src={searchImg} 
+                    height={18} 
+                    width={14} 
+                    alt=''
+                    className="min-[1440px]:w-5 min-[1440px]:h-6"
+                  />
+                  <Image 
+                    src={bagImg} 
+                    height={18} 
+                    width={14} 
+                    alt=''
+                    className="min-[1440px]:w-5 min-[1440px]:h-6"
+                  />
                 </div>
 
             </nav>

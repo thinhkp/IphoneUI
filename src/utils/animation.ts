@@ -1,3 +1,8 @@
+
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/all"
+gsap.registerPlugin(ScrollTrigger);
+
 export const animateWithGsapTimeline = (
   timeline: gsap.core.Timeline,
   modelref: any,
@@ -26,12 +31,6 @@ export const animateWithGsapTimeline = (
     "<"
   );
 };
-
-
-import gsap from "gsap"
-
-import { ScrollTrigger } from "gsap/all"
-gsap.registerPlugin(ScrollTrigger);
 
 export const animateWithGsap = (target : any, animationProps? :GSAPTweenVars, scrollProps? : ScrollTrigger.Vars) => {
   gsap.to(target, {
